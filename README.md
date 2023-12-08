@@ -5,7 +5,7 @@ For each new branch, please pull it from branch `develop`. Branch and commit mes
 -   Branch : `<type>/<title>`
 -   Branch : `<type>: <subject commit>`
 
-Type dapat mengikuti penulisan berikut ini.
+The type of the branch could follow this syntax
 
 -   `feat` → Changes, addition, or removal of features. Ex: `feat: add navbar component`
 -   `fix` → Bug fixing, followed by the bug.
