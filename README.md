@@ -1,5 +1,22 @@
 # CodeIgniter 4 Application Starter
 
+For each new branch, please pull it from branch `develop`. Branch and commit message naming must follow the following format.
+
+-   Branch : `<type>/<title>`
+-   Branch : `<type>: <subject commit>`
+
+The type of the branch could follow this syntax
+
+-   `feat` → Changes, addition, or removal of features. Ex: `feat: add navbar component`
+-   `fix` → Bug fixing, followed by the bug.
+-   `docs` → Update README.md
+-   `style` → Only updating style, no code logic changes
+-   `chore` → Install new dependencies/packages
+-   `refactor` → Changes in code, eg. renaming a variable
+-   `test` → Add testing unit
+-   `revert` → Reverting a commit
+
+
 ## What is CodeIgniter?
 
 CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
