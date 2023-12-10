@@ -4,8 +4,8 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
-    public function index()
+    public function index():string
     {
-        echo "Hello world, this is from the edited Home.php";
+        return view("header").view("menu").view("home").view("footer");
     }
 }
