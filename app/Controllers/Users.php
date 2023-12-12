@@ -46,7 +46,7 @@ class Users extends BaseController
 
                 $session = session();
                 $session->setFlashdata('success','Successful Registration');
-                 return redirect()->to('/');
+                //return redirect('/');
             }
 
         }

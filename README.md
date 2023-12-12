@@ -16,6 +16,14 @@ The type of the branch could follow this syntax
 -   `test` → Add testing unit
 -   `revert` → Reverting a commit
 
+## How to Run?
+1. Clone this repository
+2. Checkout to develop branch
+3. run "npm i"
+4. run "composer install"
+5. Open 2 different terminal, run "npm mix watch" in 1 terminal and run "php spark serve" in the other terminal
+6. Don't forget to start the Mysqli server in XAMP
+
 
 ## What is CodeIgniter?
 
