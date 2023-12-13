@@ -5,7 +5,7 @@ use App\Models\UserModel;
 
 class Users extends BaseController
 {
-    public function index()
+    public function index() // this is login
     {
         $data = [];
         helper(['form']);
@@ -46,7 +46,7 @@ class Users extends BaseController
 
                 $session = session();
                 $session->setFlashdata('success','Successful Registration');
-                //return redirect('/');
+                return redirect()->to('/'); 
             }
 
         }

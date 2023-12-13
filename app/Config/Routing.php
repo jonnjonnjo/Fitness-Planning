@@ -25,7 +25,7 @@ class Routing extends BaseRouting
      *
      * Default: APPPATH . 'Config/Routes.php'
      */
-    public array $routeFiles = [
+    public array $routeFiles = [    
         APPPATH . 'Config/Routes.php',
     ];
 
@@ -43,7 +43,7 @@ class Routing extends BaseRouting
      *
      * Default: 'Home'
      */
-    public string $defaultController = 'Home';
+    public string $defaultController = 'Users';
 
     /**
      * The default method to call on the controller when no other
