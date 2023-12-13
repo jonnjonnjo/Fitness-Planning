@@ -33,7 +33,7 @@ class Users extends BaseController
 
 				$this->setUserSession($user);
 				//$session->setFlashdata('success', 'Successful Registration');
-				return redirect()->to('/profile');
+				return redirect()->to('/home');
 
 
             }
