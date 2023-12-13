@@ -11,5 +11,5 @@ $routes->setDefaultController('Users');
 
 $routes->get('/', 'Users::index');
 $routes->match(['get','post'],'/register','Users::register');
-$routes->get('/login','Login::index');
+$routes->match(['get','post'],'/login','Users::index');
 $routes->get('/profile','Profile::index');

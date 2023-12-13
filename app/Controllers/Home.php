@@ -6,6 +6,9 @@ class Home extends BaseController
 {
     public function index():string
     {
-        return view("header").view("menu").view("home").view("footer");
+        $data = [];
+        echo view('templates/header',$data);
+        echo view ('login');
+        echo view('templates/footer');
     }
 }
