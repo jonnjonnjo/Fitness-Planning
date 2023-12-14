@@ -100,4 +100,6 @@ class Users extends BaseController
         echo view ('register');
         echo view('templates/footer');
     }
+
+
 }

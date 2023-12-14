@@ -47,7 +47,23 @@ class CreateUsersTable extends Migration
                 'default' => null,  
                 'on_update' => new RawSql('CURRENT_TIMESTAMP'),
             ],
+            'height' =>[
+                'type'=>'INT',
+                'default'=>null,
+            ],
+            'weight' => [
+                'type'=>'INT',
+                'default'=>null,
+            ],
+            'age' => [
+                'type'=>'INT',
+                'default'=>null,
+            ]
         ]);
+
+        // height VARCHAR(255),
+        // weight VARCHAR(255),
+        // age INT,
 
         $this->forge->addPrimaryKey("id");
         $this->forge->createTable('users');
