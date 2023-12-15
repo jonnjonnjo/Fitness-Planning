@@ -42,12 +42,13 @@ class Profile extends BaseController
                     $extractedArray[$property] = $queryData->$property;
                 }
             }
+            $dataInsert['BMI'] = $extractedArray['weight']/(($extractedArray['height']/100)*($extractedArray['height']/100));
 
             // $extractedArray now contains the values of the specified properties
             
             session()->set($extractedArray);
             session()->set($dataInsert);
-            //return redirect()->to('/profile');
+
 
             if($prev == false) return redirect()->to('/profile');
         }
@@ -55,6 +56,7 @@ class Profile extends BaseController
 
         echo view('templates/header', $data);
         echo view('/profile');
+        if(session()->get('isDataCompleted')) echo view('/insight');
         echo view('templates/footer');
     }
 
