@@ -40,7 +40,7 @@ php spark serve
 ## Api Endpoints for
 | No  | HTTP Method | URL        | Description                           |
 | --- | ----------- | ---------- | ------------------------------------- |
-| 1   | GET         | /calories-converter?q     | Show the recommendation of activities taken after eating a food with Q calories   |
+| 1   | GET         | /calories-converter?calories=Q     | Show the recommendation of activities taken after eating a food with Q calories   |
 
 
 ## What is CodeIgniter?
