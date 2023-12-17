@@ -7,11 +7,13 @@ class Calorie extends BaseController
     public function index()
     {
         $alldata = $this->request->getGet();
-        $sendData = array();
-        $caloriesCutted = substr($alldata['calories'], 0, strlen($alldata) - 6);
-        $walk = new Activity('walk', $caloriesCutted);
-        $pushup = new Activity('push up', $caloriesCutted);
-        $situp = new Activity('sit up', $caloriesCutted);
+       // $sendData = array();
+        //$caloriesCutted = substr($alldata['calories'], 0, strlen($alldata) - 6);
+        //return $this->response->setStatusCode(200)->setJSON($alldata)
+        $alldata = $alldata['calories'];
+        $walk = new Activity('walk', $alldata);
+        $pushup = new Activity('push up', $alldata);
+        $situp = new Activity('sit up', $alldata);
 
         $sendData[] = $walk;
         $sendData[] = $pushup;
