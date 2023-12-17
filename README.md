@@ -37,7 +37,7 @@ npm mix watch
 ```  
 and run this in terminal 2 
 ```
-php spark serve
+php spark serve --port 8081
 ``````
 5. Don't forget to start the Mysqli server in XAMP
 
