@@ -68,7 +68,8 @@ class Profile extends BaseController
            $data = [];
            //$getallData = json_decode($caloriesAPI->sendGetRequest(15));
            $data['foodmart'] = [];
-           for ($i = -4; $i <= 5; $i++) {
+           $baseCalories = round(session()->get('BMI')*100);
+           for ($i = -99; $i <= 100; $i++) {
             $getAllData = json_decode($caloriesAPI->sendGetRequest(15 - $i));
             
             // Check if the decoding was successful
