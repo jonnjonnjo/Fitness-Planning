@@ -57,22 +57,27 @@ class Profile extends BaseController
                 return redirect()->to('/profile');
         }
 
-        $caloriesAPI = new FoodsAPI();
+        
 
 
         echo view('templates/header', $data);
         echo view('/profile');
         if (session()->get('isDataCompleted')) {
             echo view('/insight');
-          //  echo $caloriesAPI->sendGetRequest(15);
+            $caloriesAPI = new FoodsAPI();
            $data = [];
            //$getallData = json_decode($caloriesAPI->sendGetRequest(15));
            $data['foodmart'] = [];
-           $baseCalories = round(session()->get('BMI')*100);
-           for ($i = -99; $i <= 100; $i++) {
-            $getAllData = json_decode($caloriesAPI->sendGetRequest(15 - $i));
+           $baseCalories = round(session()->get('BMI')*100/5);
+           for ($i = -50; $i <= 50; $i++) {
+            $getAllData = json_decode($caloriesAPI->sendGetRequest($baseCalories - $i));
             
-            // Check if the decoding was successful
+/*            echo "<pre>";
+           print_r($getAllData);
+           echo "</pre>"; */
+
+
+            // // Check if the decoding was successful
             if ($getAllData !== null) {
                 // Loop through the foodmart array
                 foreach ($getAllData->foodmart as $food) {
