@@ -4,8 +4,11 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
-    public function index():string
+    public function index()
     {
-        return view("header").view("menu").view("home").view("footer");
+        $data = [];
+        echo view('templates/header',$data);
+        echo view ('home');
+        echo view('templates/footer');
     }
 }
