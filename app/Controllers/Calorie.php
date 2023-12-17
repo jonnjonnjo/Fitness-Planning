@@ -8,10 +8,10 @@ class Calorie extends BaseController
     {
         $alldata = $this->request->getGet();
         $sendData = array();
-
-        $walk = new Activity('walk', $alldata['calories']);
-        $pushup = new Activity('push up', $alldata['calories']);
-        $situp = new Activity('sit up', $alldata['calories']);
+        $caloriesCutted = substr($alldata['calories'], 0, strlen($alldata) - 6);
+        $walk = new Activity('walk', $caloriesCutted);
+        $pushup = new Activity('push up', $caloriesCutted);
+        $situp = new Activity('sit up', $caloriesCutted);
 
         $sendData[] = $walk;
         $sendData[] = $pushup;

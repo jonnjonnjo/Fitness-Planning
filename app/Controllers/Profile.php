@@ -3,6 +3,9 @@
 namespace App\Controllers;
 
 use App\Models\UserModel;
+use FoodsAPI;
+
+require_once 'FoodsAPI.php';
 
 class Profile extends BaseController
 {
@@ -42,21 +45,31 @@ class Profile extends BaseController
                     $extractedArray[$property] = $queryData->$property;
                 }
             }
-            $dataInsert['BMI'] = $extractedArray['weight']/(($extractedArray['height']/100)*($extractedArray['height']/100));
+            $dataInsert['BMI'] = $extractedArray['weight'] / (($extractedArray['height'] / 100) * ($extractedArray['height'] / 100));
 
             // $extractedArray now contains the values of the specified properties
-            
+
             session()->set($extractedArray);
             session()->set($dataInsert);
 
 
-            if($prev == false) return redirect()->to('/profile');
+            if ($prev == false)
+                return redirect()->to('/profile');
         }
+
+        $caloriesAPI = new FoodsAPI();
 
 
         echo view('templates/header', $data);
         echo view('/profile');
-        if(session()->get('isDataCompleted')) echo view('/insight');
+        if (session()->get('isDataCompleted')) {
+            echo view('/insight');
+          //  echo $caloriesAPI->sendGetRequest(15);
+           $data = [];
+           $getallData = json_decode($caloriesAPI->sendGetRequest(15));
+           $data['foodmart'] = $getallData->foodmart ?? [];
+            echo view('/foodSuggestion',$data);
+        }
         echo view('templates/footer');
     }
 
@@ -69,15 +82,6 @@ class Profile extends BaseController
 
         $loggedUserData = session()->get();
         $userModel = new UserModel();
-
-        // echo "<pre>";
-        // print_r($data);
-        // echo "</pre>";
-        // print($data['weight']);
-
-        // $data['age'] = (int)$data['age'];
-        // $data['height'] = (int)$data['height'];
-        // $data['weight'] = (int)$data['weight'];
 
 
         $userModel->updateUserAttribute($loggedUserData['id'], $data);
