@@ -28,6 +28,6 @@ php spark serve --port 8081
 ## Api Endpoints for
 | No  | HTTP Method | URL        | Description                           |
 | --- | ----------- | ---------- | ------------------------------------- |
-| 1   | GET         | /calories-converter?calories=Q     | Show the recommendation of activities taken after eating a food with Q calories   |
+| 1   | GET         | {{baseURL}}/calories-converter?calories=Q     | Show the recommendation of activities taken after eating a food with Q calories   |
 
 
