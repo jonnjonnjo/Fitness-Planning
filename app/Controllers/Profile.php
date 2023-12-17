@@ -66,8 +66,22 @@ class Profile extends BaseController
             echo view('/insight');
           //  echo $caloriesAPI->sendGetRequest(15);
            $data = [];
-           $getallData = json_decode($caloriesAPI->sendGetRequest(15));
-           $data['foodmart'] = $getallData->foodmart ?? [];
+           //$getallData = json_decode($caloriesAPI->sendGetRequest(15));
+           $data['foodmart'] = [];
+           for ($i = -4; $i <= 5; $i++) {
+            $getAllData = json_decode($caloriesAPI->sendGetRequest(15 - $i));
+            
+            // Check if the decoding was successful
+            if ($getAllData !== null) {
+                // Loop through the foodmart array
+                foreach ($getAllData->foodmart as $food) {
+                    $data['foodmart'][] = $food;
+                }
+            }
+            }
+        // echo "<pre>";
+        // print_r($data);
+        // echo "</pre>";
             echo view('/foodSuggestion',$data);
         }
         echo view('templates/footer');
