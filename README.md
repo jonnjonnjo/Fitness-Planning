@@ -20,6 +20,10 @@ The type of the branch could follow this syntax
 1. Clone this repository
 2. Checkout to develop branch
 3. Download the .env in [here](https://drive.google.com/file/d/1JKnG2Lh-D2Faa1T2705BHDhjjO0dq3lb/view?usp=sharing)
+4. Create database in phpmyadmin using this command
+```
+CREATE DATABASE `fitness-plan-testing`;
+```
 3. run "composer install"
 ```
 composer install

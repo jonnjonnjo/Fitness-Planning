@@ -10,8 +10,6 @@ class CreateUsersTable extends Migration
  
     public function up()
     {
-        $forge = \Config\Database::forge();
-        $forge->createDatabase('fitness-plan-',true);
         $this->forge->addField([
             "id" => [
                 "type" => "INT",
